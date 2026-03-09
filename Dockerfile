@@ -1,32 +1,23 @@
+FROM node:20-alpine AS builder
 
-    FROM node:20-alpine AS builder
+WORKDIR /app
 
-    RUN corepack enable && corepack prepare pnpm@latest --activate
+COPY package.json package-lock.json ./
 
-    WORKDIR /app
+RUN npm ci
 
+COPY . .
 
-    COPY pnpm-lock.yaml package.json ./
+RUN npm run build
 
+FROM node:20-alpine AS production
 
-    RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
-        pnpm install --frozen-lockfile
+WORKDIR /app
 
+COPY --from=builder /app/dist ./dist
 
-    COPY . .
-    RUN pnpm run build
+USER node
 
-    FROM node:20-alpine AS production
+EXPOSE 5000
 
-    WORKDIR /app
-
-    COPY --from=builder /app/dist ./dist
-
-
-    USER node
-
-
-    EXPOSE 5000
-
-
-    CMD ["npx", "serve", "-s", "dist", "-l", "5000"]
+CMD ["npx", "serve", "-s", "dist", "-l", "5000"]
