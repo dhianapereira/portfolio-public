@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import HomePage from "@/pages/home/HomePage";
 import { LanguageProvider } from "@/shared/LanguageContext";
-import CursorDot from "@/shared/components/CursorDot";
 import { SEO } from "@/shared/components/SEO";
 import { Analytics } from "@vercel/analytics/react";
 import Lenis from "lenis";
@@ -37,7 +36,6 @@ export default function App() {
             <Analytics />
             <LanguageProvider>
                 <SEO />
-                <CursorDot />
                 <HomePage />
             </LanguageProvider>
         </HelmetProvider>

@@ -167,19 +167,3 @@ textarea {
     --radius-3xl: calc(var(--radius) * 2.2);
     --radius-4xl: calc(var(--radius) * 2.6);
 }
-
-@media (pointer: fine) {
-    html.cursor-none-global,
-    html.cursor-none-global body,
-    html.cursor-none-global *,
-    html.cursor-none-global *::before,
-    html.cursor-none-global *::after,
-    html.cursor-none-global::-webkit-scrollbar,
-    html.cursor-none-global::-webkit-scrollbar-thumb,
-    html.cursor-none-global::-webkit-scrollbar-track,
-    html.cursor-none-global body *,
-    html.cursor-none-global body *::before,
-    html.cursor-none-global body *::after {
-        cursor: none !important;
-    }
-}
