@@ -3,11 +3,6 @@ import type { ReactNode } from "react";
 import { SendIcon } from "@/shared/icons/send";
 import type { SendIconHandle } from "@/shared/icons/send";
 import { useTranslation } from "@/shared/useTranslation";
-import {
-    FeatherIcon as AnimatedFeatherIcon,
-    GithubIcon as AnimatedGithubIcon,
-    LinkedinIcon as AnimatedLinkedinIcon,
-} from "lucide-animated";
 import { ArrowRight, Code2, FolderGit2, MapPin, Terminal } from "lucide-react";
 import { motion } from "motion/react";
 
@@ -22,23 +17,6 @@ function Badge({ icon, label }: Readonly<{ icon: ReactNode; label: string }>) {
             {icon}
             {label}
         </span>
-    );
-}
-
-function SocialIcon({ href, icon }: Readonly<{ href: string; icon: ReactNode }>) {
-    return (
-        <motion.a
-            href={href}
-            target="_blank"
-            rel="noreferrer"
-            className="text-gray-500 transition-colors hover:text-black"
-            aria-label="Social link"
-            whileHover={{ y: -3, scale: 1.08 }}
-            whileTap={{ scale: 0.96 }}
-            transition={{ type: "spring", stiffness: 300, damping: 18 }}
-        >
-            {icon}
-        </motion.a>
     );
 }
 
@@ -209,29 +187,6 @@ export default function HeroSection() {
                                 <ArrowRight size={18} />
                             </motion.span>
                         </motion.a>
-                    </motion.div>
-
-                    <motion.div
-                        className="flex items-center gap-6 pt-4"
-                        initial={{ opacity: 0, y: 18 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.45, delay: 0.26, ease: "easeOut" }}
-                    >
-                        <p className="text-xs font-bold text-gray-600 uppercase tracking-widest">{t("connect")}</p>
-                        <div className="flex gap-4">
-                            <SocialIcon
-                                href="https://github.com/gustavo-lola"
-                                icon={<AnimatedGithubIcon size={26} />}
-                            />
-                            <SocialIcon
-                                href="https://linkedin.com/in/gustavo-lola"
-                                icon={<AnimatedLinkedinIcon size={26} />}
-                            />
-                            <SocialIcon
-                                href="mailto:gustavolola.dev@gmail.com"
-                                icon={<AnimatedFeatherIcon size={26} />}
-                            />
-                        </div>
                     </motion.div>
                 </div>
 
