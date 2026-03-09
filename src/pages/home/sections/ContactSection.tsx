@@ -1,6 +1,6 @@
 import { SectionHeader } from "@/shared/components/SectionHeader";
 import { useTranslation } from "@/shared/useTranslation";
-import { FeatherIcon, MapPinIcon } from "lucide-animated";
+import { FeatherIcon } from "lucide-animated";
 
 type ContactInfoProps = {
     icon: React.ReactNode;
