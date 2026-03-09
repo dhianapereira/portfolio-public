@@ -1,6 +1,6 @@
 import { SectionHeader } from "@/shared/components/SectionHeader";
 import { useTranslation } from "@/shared/useTranslation";
-import { FeatherIcon, MapPinIcon, SmartphoneNfcIcon } from "lucide-animated";
+import { FeatherIcon, MapPinIcon } from "lucide-animated";
 
 type ContactInfoProps = {
     icon: React.ReactNode;
@@ -67,12 +67,6 @@ export default function Contact() {
                             label={t("email")}
                             value="gustavolola.dev@gmail.com"
                         />
-                        <ContactInfo
-                            icon={<SmartphoneNfcIcon size={20} />}
-                            label={t("phone")}
-                            value="+55 (82) 99653-5022"
-                        />
-                        <ContactInfo icon={<MapPinIcon size={20} />} label={t("location")} value="Arapiraca, Brazil" />
                     </div>
                 </div>
             </div>
