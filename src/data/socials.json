@@ -1,0 +1,19 @@
+{
+    "github": {
+        "label": "GitHub",
+        "url": "https://github.com/dhianapereira",
+        "username": "dhianapereira"
+    },
+    "linkedin": {
+        "label": "LinkedIn",
+        "url": "https://linkedin.com/in/dhianapereira",
+        "username": "dhianapereira"
+    },
+    "email": {
+        "label": {
+            "pt": "Email",
+            "en": "Email"
+        },
+        "value": "dhianapereira1@gmail.com"
+    }
+}

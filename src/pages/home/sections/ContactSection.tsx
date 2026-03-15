@@ -1,4 +1,6 @@
+import socialsContent from "@/data/socials.json";
 import { SectionHeader } from "@/shared/components/SectionHeader";
+import type { SocialsContent } from "@/shared/types/socials";
 import { useTranslation } from "@/shared/useTranslation";
 import { FeatherIcon } from "lucide-animated";
 
@@ -44,7 +46,8 @@ function ContactInfo({ icon, label, value }: Readonly<ContactInfoProps>) {
 }
 
 export default function Contact() {
-    const { t } = useTranslation();
+    const { t, language } = useTranslation();
+    const socials = socialsContent as SocialsContent;
 
     return (
         <section id="contact" className="scroll-mt-24">
@@ -64,8 +67,8 @@ export default function Contact() {
                     <div className="space-y-4">
                         <ContactInfo
                             icon={<FeatherIcon size={20} />}
-                            label={t("email")}
-                            value="gustavolola.dev@gmail.com"
+                            label={socials.email.label[language] || t("email")}
+                            value={socials.email.value}
                         />
                     </div>
                 </div>
