@@ -11,14 +11,12 @@ export default function BookCard({
     title,
     author,
     status,
-    progress,
     cover,
     href,
 }: Readonly<{
     title: string;
     author: string;
     status: string;
-    progress: number;
     cover: string;
     href: string;
 }>) {
@@ -42,24 +40,12 @@ export default function BookCard({
                 <h3 className="text-[1.1rem] font-bold tracking-tight leading-snug">{title}</h3>
                 <p className="text-sm text-gray-500">{author}</p>
             </div>
-            <div className="space-y-2">
-                <div className="flex items-center justify-between">
-                    <span
-                        className={`rounded-full px-2.5 py-1 text-[11px] font-bold uppercase tracking-widest ${statusStyles[status] ?? statusStyles.reading}`}
-                    >
-                        {t(status as keyof (typeof import("@/shared/i18n").translations)["en"])}
-                    </span>
-                    <span className="text-xs font-semibold text-gray-400">{progress}%</span>
-                </div>
-                <div className="h-1 w-full overflow-hidden rounded-full bg-zinc-100">
-                    <motion.div
-                        className="h-full rounded-full bg-ink"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${progress}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                    />
-                </div>
+            <div>
+                <span
+                    className={`rounded-full px-2.5 py-1 text-[11px] font-bold uppercase tracking-widest ${statusStyles[status] ?? statusStyles.reading}`}
+                >
+                    {t(status as keyof (typeof import("@/shared/i18n").translations)["en"])}
+                </span>
             </div>
         </motion.a>
     );

@@ -31,13 +31,13 @@ export default function HomePage() {
                             <ProjectsSection />
                         </div>
                         <div className="mt-12 md:mt-32 px-4 md:px-12 lg:px-24">
-                            <LibrarySection />
-                        </div>
-                        <div className="mt-12 md:mt-32 px-4 md:px-12 lg:px-24">
                             <Expertise />
                         </div>
                         <div className="mt-12 md:mt-32 px-4 md:px-12 lg:px-24">
                             <EducationLanguage />
+                        </div>
+                        <div className="mt-12 md:mt-32 px-4 md:px-12 lg:px-24">
+                            <LibrarySection />
                         </div>
                         <div className="mt-12 md:mt-32 px-4 md:px-12 lg:px-24">
                             <Contact />

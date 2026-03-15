@@ -1,0 +1,67 @@
+[
+  {
+    "title": {
+      "pt": "Padrões de Projeto",
+      "en": "Design Patterns"
+    },
+    "author": {
+      "pt": "Gangue dos Quatro",
+      "en": "Gang of Four"
+    },
+    "status": "reading",
+    "cover": "https://m.media-amazon.com/images/I/51nL96Abi1L._SY425_.jpg",
+    "href": "https://www.amazon.com.br/Design-Patterns-Object-Oriented-Addison-Wesley-Professional-ebook/dp/B000SEIBB8"
+  },
+  {
+    "title": {
+      "pt": "O Programador Pragmático",
+      "en": "The Pragmatic Programmer"
+    },
+    "author": {
+      "pt": "Andrew Hunt & David Thomas",
+      "en": "Andrew Hunt & David Thomas"
+    },
+    "status": "toRead",
+    "cover": "https://m.media-amazon.com/images/I/71VStSjZmpL._SY385_.jpg",
+    "href": "https://www.amazon.com.br/Pragmatic-Programmer-Journeyman-Master-1st/dp/8131722422"
+  },
+  {
+    "title": {
+      "pt": "Clean Architecture",
+      "en": "Clean Architecture"
+    },
+    "author": {
+      "pt": "Robert C. Martin",
+      "en": "Robert C. Martin"
+    },
+    "status": "reading",
+    "cover": "https://m.media-amazon.com/images/I/619ht2WrGTL._SY385_.jpg",
+    "href": "https://www.amazon.com.br/Clean-Architecture-Craftsmans-Software-Structure-ebook/dp/B075LRM681"
+  },
+  {
+    "title": {
+      "pt": "Código Limpo",
+      "en": "Clean Code"
+    },
+    "author": {
+      "pt": "Robert C. Martin",
+      "en": "Robert C. Martin"
+    },
+    "status": "reading",
+    "cover": "https://m.media-amazon.com/images/I/41aHzYSXZkL._SY445_SX342_ML2_.jpg",
+    "href": "https://www.amazon.com.br/C%C3%B3digo-limpo-Robert-C-Martin/dp/8576082675"
+  },
+  {
+    "title": {
+      "pt": "Domain-Driven Design",
+      "en": "Domain-Driven Design"
+    },
+    "author": {
+      "pt": "Eric Evans",
+      "en": "Eric Evans"
+    },
+    "status": "toRead",
+    "cover": "https://m.media-amazon.com/images/I/51HGF9mg6iL._SY445_SX342_ML2_.jpg",
+    "href": "https://www.amazon.com.br/Domain-Driven-Design-Atacando-Complexidades-Software/dp/8550800651"
+  }
+]

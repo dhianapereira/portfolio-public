@@ -28,6 +28,7 @@ export const translations = {
         loadingProjects: "Loading projects from GitHub...",
         projectsError: "Couldn't load GitHub projects right now.",
         noProjectDescription: "No description provided for this repository yet.",
+        noBooks: "No books added to the library yet.",
     },
     pt: {
         reading: "Lendo",
@@ -59,6 +60,7 @@ export const translations = {
         loadingProjects: "Carregando projetos do GitHub...",
         projectsError: "Nao foi possivel carregar os projetos do GitHub agora.",
         noProjectDescription: "Este repositorio ainda nao tem descricao no GitHub.",
+        noBooks: "Nenhum livro foi adicionado a biblioteca ainda.",
     },
 };
 
