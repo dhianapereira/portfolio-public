@@ -1,0 +1,49 @@
+{
+    "location": {
+        "pt": "Alagoas, Brasil",
+        "en": "Alagoas, Brazil"
+    },
+    "roleBadge": {
+        "pt": "Mobile Developer",
+        "en": "Mobile Developer"
+    },
+    "eyebrow": {
+        "pt": "Mobile Developer",
+        "en": "Mobile Developer"
+    },
+    "headline": {
+        "firstName": "Dhiana",
+        "lastName": "Pereira"
+    },
+    "summary": {
+        "pt": {
+            "beforeHighlightOne": "Especialista em ",
+            "highlightOne": "aplicações mobile",
+            "betweenHighlights": " com foco em ",
+            "highlightTwo": "arquitetura e testes."
+        },
+        "en": {
+            "beforeHighlightOne": "Specialist in ",
+            "highlightOne": "mobile applications",
+            "betweenHighlights": " focused on ",
+            "highlightTwo": "architecture and testing."
+        }
+    },
+    "photo": {
+        "url": "/profile.png",
+        "alt": {
+            "pt": "Foto de Dhiana Pereira",
+            "en": "Photo of Dhiana Pereira"
+        }
+    },
+    "stats": [
+        {
+            "id": "experience",
+            "value": "5+",
+            "label": {
+                "pt": "Ano Exp.",
+                "en": "Yrs Exp."
+            }
+        }
+    ]
+}
