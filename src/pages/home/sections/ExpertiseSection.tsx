@@ -1,66 +1,45 @@
+import expertise from "@/data/expertise.json";
 import { SectionHeader } from "@/shared/components/SectionHeader";
 import SkillCard from "@/shared/components/SkillCard";
+import type { ExpertiseGroup } from "@/shared/types/expertise";
 import { useTranslation } from "@/shared/useTranslation";
-import {
-    Box,
-    Code2,
-    Container,
-    Cpu,
-    Database,
-    FileJson,
-    GitBranch,
-    Globe,
-    Layers,
-    Settings,
-    Terminal,
-    Wrench,
-    Zap,
-} from "lucide-react";
+import type { ReactNode } from "react";
+import { Code2, Cpu, Database, Layers } from "lucide-react";
+
+type GroupIconName = "code2" | "layers" | "database" | "cpu";
 
 export default function Expertise() {
     const { language } = useTranslation();
+    const expertiseGroups = expertise as ExpertiseGroup[];
+    const iconMap: Record<GroupIconName, ReactNode> = {
+        code2: <Code2 size={14} />,
+        cpu: <Cpu size={14} />,
+        database: <Database size={14} />,
+        layers: <Layers size={14} />,
+    };
+    const groupIconMap: Record<ExpertiseGroup["id"], GroupIconName> = {
+        languages: "code2",
+        frameworks: "layers",
+        databases: "database",
+        tools: "cpu",
+    };
+
     return (
         <section id="expertise" className="space-y-16 scroll-mt-24" key={language}>
             <SectionHeader title="Expertise" number="04" />
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4">
-                <SkillCard
-                    icon={<Code2 size={24} />}
-                    title={language === "pt" ? "Linguagens" : "Languages"}
-                    skills={[
-                        { name: "TypeScript", color: "var(--color-ts)", icon: <FileJson size={14} /> },
-                        { name: "Go", color: "var(--color-go)", icon: <Zap size={14} /> },
-                        { name: "Python", color: "var(--color-py)", icon: <Terminal size={14} /> },
-                        { name: "JavaScript", color: "#f7df1e", icon: <Code2 size={14} /> },
-                    ]}
-                />
-                <SkillCard
-                    icon={<Layers size={24} />}
-                    title="Frameworks"
-                    skills={[
-                        { name: "Node.js", color: "var(--color-node)", icon: <Box size={14} /> },
-                        { name: "Next.js", color: "#000000", icon: <Globe size={14} /> },
-                        { name: "React", color: "var(--color-react)", icon: <Cpu size={14} /> },
-                        { name: "Express", color: "#828282", icon: <Settings size={14} /> },
-                    ]}
-                />
-                <SkillCard
-                    icon={<Database size={24} />}
-                    title={language === "pt" ? "Bancos de Dados" : "Databases"}
-                    skills={[
-                        { name: "PostgreSQL", color: "#336791", icon: <Database size={14} /> },
-                        { name: "Redis", color: "#d82c20", icon: <Zap size={14} /> },
-                        { name: "MongoDB", color: "#47a248", icon: <Layers size={14} /> },
-                    ]}
-                />
-                <SkillCard
-                    icon={<Cpu size={24} />}
-                    title={language === "pt" ? "Ferramentas" : "Tools"}
-                    skills={[
-                        { name: "Docker", color: "#2496ed", icon: <Container size={14} /> },
-                        { name: "Git", color: "#f05032", icon: <GitBranch size={14} /> },
-                        { name: "Webhooks", color: "#5a5a5a", icon: <Wrench size={14} /> },
-                    ]}
-                />
+                {expertiseGroups.map((group) => (
+                    <SkillCard
+                        key={group.title.en}
+                        icon={
+                            groupIconMap[group.id] && (
+                                <span className="inline-flex">{iconMap[groupIconMap[group.id]]}</span>
+                            )
+                        }
+                        title={group.title[language]}
+                        skills={group.skills}
+                    />
+                ))}
             </div>
         </section>
     );
