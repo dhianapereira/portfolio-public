@@ -1,13 +1,14 @@
+import educationContent from "@/data/education.json";
 import { SectionHeader } from "@/shared/components/SectionHeader";
+import type { EducationContent } from "@/shared/types/education";
 import { useTranslation } from "@/shared/useTranslation";
 import { motion } from "motion/react";
 
 export default function EducationLanguage() {
     const { language } = useTranslation();
+    const { education, languages } = educationContent as EducationContent;
 
-    const languagesArr: any[] = [];
-
-    const hasLanguages = languagesArr.length > 0;
+    const hasLanguages = languages.length > 0;
 
     return (
         <section
@@ -18,17 +19,17 @@ export default function EducationLanguage() {
             <div className="space-y-10">
                 <SectionHeader title="Education" number="05" />
 
-                <div className="flex flex-col gap-2 border-l-2 border-ink pl-6">
-                    <h3 className="text-2xl font-bold">
-                        {language === "pt" ? "Sistemas de Informação" : "Information Systems"}
-                    </h3>
+                {education.map((item) => (
+                    <div key={`${item.institution}-${item.course.en}`} className="flex flex-col gap-2 border-l-2 border-ink pl-6">
+                        <h3 className="text-2xl font-bold">{item.course[language]}</h3>
 
-                    <p className="text-gray-500 text-lg">Instituto Federal de Alagoas</p>
+                        <p className="text-gray-500 text-lg">{item.institution}</p>
 
-                    <p className="text-sm font-mono bg-zinc-100 inline-block px-2 py-1 rounded mt-1">
-                        {language === "pt" ? "Previsão Março 2029" : "Expected March 2029"}
-                    </p>
-                </div>
+                        <p className="text-sm font-mono bg-zinc-100 inline-block px-2 py-1 rounded mt-1">
+                            {item.period[language]}
+                        </p>
+                    </div>
+                ))}
             </div>
 
             {hasLanguages && (
@@ -36,7 +37,7 @@ export default function EducationLanguage() {
                     <SectionHeader title="Languages" number="06" />
 
                     <div className="flex flex-col gap-4">
-                        {languagesArr.map((lang, i) => (
+                        {languages.map((lang, i) => (
                             <motion.div
                                 key={lang.name}
                                 initial={{ opacity: 0, x: 20 }}
@@ -51,21 +52,6 @@ export default function EducationLanguage() {
                                 className="flex items-center justify-between px-6 py-4 border border-border rounded-2xl bg-white cursor-default transition-[border-color,box-shadow] duration-200 hover:border-ink hover:shadow-[0_8px_32px_0_rgba(0,0,0,0.10)]"
                             >
                                 <div className="flex items-center gap-4">
-                                    <motion.span
-                                        variants={{
-                                            cardHover: {
-                                                rotate: [0, -12, 12, -6, 6, 0],
-                                                transition: {
-                                                    duration: 0.5,
-                                                    ease: "easeInOut",
-                                                },
-                                            },
-                                        }}
-                                        className="text-gray-900 inline-flex"
-                                    >
-                                        {lang.icon}
-                                    </motion.span>
-
                                     <motion.div
                                         variants={{
                                             cardHover: {

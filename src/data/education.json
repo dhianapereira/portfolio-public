@@ -1,0 +1,27 @@
+{
+    "education": [
+        {
+            "course": {
+                "pt": "Sistemas de Informação",
+                "en": "Information Systems"
+            },
+            "institution": "Instituto Federal de Alagoas",
+            "period": {
+                "pt": "Previsão Julho 2026",
+                "en": "Expected July 2026"
+            }
+        },
+        {
+            "course": {
+                "pt": "Técnico em Informática",
+                "en": "Computer Technician"
+            },
+            "institution": "Instituto Federal de Alagoas",
+            "period": {
+                "pt": "Concluído",
+                "en": "Completed"
+            }
+        }
+    ],
+    "languages": []
+}
