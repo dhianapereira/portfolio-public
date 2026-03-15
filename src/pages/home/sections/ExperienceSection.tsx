@@ -1,5 +1,7 @@
+import experiences from "@/data/experiences.json";
 import ExperienceItem from "@/shared/components/ExperienceItem";
 import { SectionHeader } from "@/shared/components/SectionHeader";
+import type { ExperienceEntry } from "@/shared/types/experience";
 import { useTranslation } from "@/shared/useTranslation";
 import { motion } from "motion/react";
 import type { Variants } from "motion/react";
@@ -34,60 +36,8 @@ const timelineVariants: Variants = {
 
 export default function ExperienceSection() {
     const { language } = useTranslation();
-    // Dynamic experiences array for translation
-    const experiences = [
-        {
-            company: "Espaço 4.0 IFAL",
-            role: language === "pt" ? "Desenvolvedor de Software" : "Software Developer",
-            period: language === "pt" ? "Out 2025 - Presente" : "Oct 2025 - Present",
-            description:
-                language === "pt"
-                    ? [
-                          "Liderando a evolução do sistema, garantindo qualidade, performance e escalabilidade.",
-                          "Participação ativa em decisões de arquitetura de APIs.",
-                          "Liderando a equipe de desenvolvimento e promovendo boas práticas.",
-                      ]
-                    : [
-                          "Leading system evolution, ensuring quality, performance, and scalability.",
-                          "Active participation in API architecture decisions.",
-                          "Leading the dev team and promoting best practices.",
-                      ],
-        },
-        {
-            company: "PrimeCode Solutions",
-            role: language === "pt" ? "Desenvolvedor de Software (Freelancer)" : "Software Developer (Freelancer)",
-            period: language === "pt" ? "Jul 2025 - Dez 2025" : "July 2025 - Dec 2025",
-            description:
-                language === "pt"
-                    ? [
-                          "Desenvolveu APIs RESTful de alta performance com tratamento de erros padronizado.",
-                          "Construiu aplicações responsivas usando boas práticas de front-end.",
-                          "Implementou arquiteturas escaláveis com separação em camadas e modularização.",
-                      ]
-                    : [
-                          "Developed high-performance RESTful APIs with standardized error handling.",
-                          "Built responsive applications using front-end best practices.",
-                          "Implemented scalable architectures using layered separation and modularization.",
-                      ],
-        },
-        {
-            company: "DPI",
-            role: language === "pt" ? "Desenvolvedor de Software (Freelancer)" : "Software Developer (Freelancer)",
-            period: language === "pt" ? "Jun 2025 - Nov 2025" : "June 2025 - Nov 2025",
-            description:
-                language === "pt"
-                    ? [
-                          "Implementou webhooks para comunicação assíncrona e integrações externas.",
-                          "Desenvolveu APIs RESTful com autenticação e respostas padronizadas.",
-                          "Modelou e estruturou bancos de dados com otimização de consultas.",
-                      ]
-                    : [
-                          "Implemented webhooks for asynchronous communication and external integrations.",
-                          "Developed RESTful APIs with authentication and standardized responses.",
-                          "Modeled and structured databases with query optimization.",
-                      ],
-        },
-    ];
+    const experienceEntries = experiences as ExperienceEntry[];
+
     return (
         <motion.section
             id="experience"
@@ -104,13 +54,13 @@ export default function ExperienceSection() {
                     variants={timelineVariants}
                     className="absolute top-10 bottom-12 left-52 hidden w-px origin-top bg-linear-to-b from-black/25 via-black/18 to-black/8 md:block"
                 />
-                {experiences.map((experience) => (
+                {experienceEntries.map((experience) => (
                     <ExperienceItem
-                        key={`${experience.company}-${experience.period}`}
+                        key={`${experience.company}-${experience.period.en}`}
                         company={experience.company}
-                        role={experience.role}
-                        period={experience.period}
-                        description={[...experience.description]}
+                        role={experience.role[language]}
+                        period={experience.period[language]}
+                        description={[...experience.description[language]]}
                     />
                 ))}
             </motion.div>

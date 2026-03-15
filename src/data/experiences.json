@@ -1,0 +1,48 @@
+[
+    {
+        "company": "Brasil Paralelo",
+        "role": {
+            "pt": "Mobile Developer",
+            "en": "Mobile Developer"
+        },
+        "period": {
+            "pt": "Abr 2024 - Fev 2026",
+            "en": "Apr 2024 - Feb 2026"
+        },
+        "description": {
+            "pt": [
+                "Atuei no desenvolvimento e evolução dos dois aplicativos da empresa (app de streaming e audiobooks).",
+                "Fui responsável por estruturar e fortalecer a cultura de testes no mobile, incluindo a criação de um guia interno de testes para o time.",
+                "Participei ativamente de decisões técnicas e de arquitetura, contribuindo para melhorias de qualidade e manutenibilidade do código."
+            ],
+            "en": [
+                "Worked on the development and evolution of the company's two mobile apps: the streaming app and the audiobooks app.",
+                "Led efforts to strengthen the mobile testing culture, including creating an internal testing guide for the team.",
+                "Actively contributed to technical and architectural decisions, improving code quality and maintainability."
+            ]
+        }
+    },
+    {
+        "company": "unico IDTech",
+        "role": {
+            "pt": "Mobile Developer",
+            "en": "Mobile Developer"
+        },
+        "period": {
+            "pt": "Jan 2022 - Jan 2024",
+            "en": "Jan 2022 - Jan 2024"
+        },
+        "description": {
+            "pt": [
+                "Atuei no desenvolvimento do aplicativo de identidade digital da empresa, com foco em autenticação e segurança.",
+                "Fui responsável por funcionalidades de login com biometria facial e por features voltadas à segurança do dispositivo e à proteção da identidade digital.",
+                "Participei da equipe de plataforma mobile, contribuindo para melhorias de arquitetura do aplicativo."
+            ],
+            "en": [
+                "Worked on the company's digital identity app, with a strong focus on authentication and security.",
+                "Built facial biometrics login flows and features related to device security and digital identity protection.",
+                "Contributed to the mobile platform team, helping improve the application's architecture."
+            ]
+        }
+    }
+]
