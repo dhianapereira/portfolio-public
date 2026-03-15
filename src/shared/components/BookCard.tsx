@@ -1,7 +1,8 @@
+import type { BookStatus } from "@/shared/types/books";
 import { useTranslation } from "@/shared/useTranslation";
 import { motion } from "motion/react";
 
-const statusStyles: Record<string, string> = {
+const statusStyles: Record<BookStatus, string> = {
     reading: "bg-blue-50 text-blue-600",
     completed: "bg-green-50 text-green-600",
     toRead: "bg-zinc-100 text-zinc-500",
@@ -16,7 +17,7 @@ export default function BookCard({
 }: Readonly<{
     title: string;
     author: string;
-    status: string;
+    status: BookStatus;
     cover: string;
     href: string;
 }>) {

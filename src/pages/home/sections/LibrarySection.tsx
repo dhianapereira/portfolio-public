@@ -1,24 +1,9 @@
 import books from "@/data/books.json";
 import BookCard from "@/shared/components/BookCard";
 import { SectionHeader } from "@/shared/components/SectionHeader";
+import type { LibraryBook } from "@/shared/types/books";
 import { useTranslation } from "@/shared/useTranslation";
 import { motion } from "motion/react";
-
-type BookStatus = "reading" | "completed" | "toRead";
-
-type LibraryBook = {
-    title: {
-        pt: string;
-        en: string;
-    };
-    author: {
-        pt: string;
-        en: string;
-    };
-    status: BookStatus;
-    cover: string;
-    href: string;
-};
 
 export default function LibrarySection() {
     const { t, language } = useTranslation();
