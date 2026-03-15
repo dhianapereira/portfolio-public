@@ -25,6 +25,9 @@ export const translations = {
         phone: "Phone",
         location: "Location",
         connect: "Connect:",
+        loadingProjects: "Loading projects from GitHub...",
+        projectsError: "Couldn't load GitHub projects right now.",
+        noProjectDescription: "No description provided for this repository yet.",
     },
     pt: {
         reading: "Lendo",
@@ -53,6 +56,9 @@ export const translations = {
         phone: "Telefone",
         location: "Localização",
         connect: "Conectar:",
+        loadingProjects: "Carregando projetos do GitHub...",
+        projectsError: "Nao foi possivel carregar os projetos do GitHub agora.",
+        noProjectDescription: "Este repositorio ainda nao tem descricao no GitHub.",
     },
 };
 
